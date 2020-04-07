@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"> Create Event </a>
+            </div>
+            </nav>
+
+        
+        <div class="row">
+            <form class="col s12">
+            <!-- Event Name input -->
+            <div class="row">
+                <div class="input-field col s6">
+                <i class="material-icons prefix">event</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Event Name</label>
+                </div>
+            </div>
+            <!-- Event description input -->
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s10">
+                    <i class="material-icons prefix">description</i>
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Event Description</label>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- Location input -->
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">location_on</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">Location</label>
+                </div>
+                <!-- Date and Time Picker -->
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">date_range</i>
+                    <input type="text" class="datepicker">  
+                </div>
+            </div>
+            
+            <!-- Hosts input  -->
+            <div class="row">
+                <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Host name</label>
+                </div>
+                <div class="input-field col s6">
+                    <!-- Event tags -->
+                    <select multiple>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Tag 1</option>
+                    <option value="2">Tag 2</option>
+                    <option value="3">Tag 3</option>
+                    </select>
+                    <label>Materialize Multiple Select</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Create
+                <i class="material-icons right">create</i>
+            </button>
+
+            </form>
+        </div>
+                        
+                <!-- Minified jQuery -->
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script>
+                    // Initializes calendar modal when the input field is selected 
+                    const Calendar = document.querySelector('.datepicker');
+                    M.Datepicker.init(Calendar, {
+                        format: 'dd/mm/yyyy',
+                    })
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('select');
+                    var instances = M.FormSelect.init(elems, options);
+                    });
+                </script>
+
+    </body>
+  </html>
+        
