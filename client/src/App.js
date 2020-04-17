@@ -9,6 +9,7 @@ import EditEvent from "./components/edit-event.component";
 import EventsList from "./components/events-list.component";
 
 import logo from "./towson_logo.png";
+import viewProfile from "./components/view-profile.component";
 
 class App extends Component {
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
                   <Link to="" className="nav-link">Login</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="" className="nav-link">View Profile</Link>
+                  <Link to="/viewP" className="nav-link">View Profile</Link>
                 </li>
               </ul>
             </div>
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path="/view/:id" component={ViewEvent} />
           <Route path="/edit/:id" component={EditEvent} />
           <Route path="/create" component={CreateEvent} />
+          <Route path="/viewP" component={viewProfile} />
         </div>
       </Router>
     );
