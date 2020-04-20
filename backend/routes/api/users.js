@@ -14,6 +14,13 @@ router.get('/', (req, res) => {
         .then(Users => res.json(Users))
 });
 
+router.route('/:id').get(function(req, res) {
+    let id = req.params.id;
+    User.findById(id, function(err, Users) {
+        res.json(Users);
+    });
+});
+
 // @route POST api/Users
 // @desc Create A User
 // @access Public

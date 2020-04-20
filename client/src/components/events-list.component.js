@@ -14,7 +14,7 @@ const Event = props => (
         <td>{displayAttending(props.event.event_attending)}</td>
         <td>{props.event.event_numAttending}</td>
         <td>
-            <Link to={"/view/" + props.event._id}>View</Link>
+            <Link to={"/viewEvent/" + props.event._id}>View</Link>
         </td>
         <td>
             <Link to={"/edit/" + props.event._id}>Edit</Link>
@@ -60,7 +60,7 @@ export default class EventsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/events/')
+        axios.get('http://localhost:4000/api/events/')
             .then(response => {
                 this.setState({
                     events: response.data,
@@ -72,7 +72,7 @@ export default class EventsList extends Component {
     }
 
     componentDidUpdate() {
-        axios.get('http://localhost:4000/events/')
+        axios.get('http://localhost:4000/api/events/')
             .then(response => {
                 this.setState({
                     events: response.data,

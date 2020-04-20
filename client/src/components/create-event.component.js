@@ -114,7 +114,7 @@ export default class CreateEvent extends Component {
             event_numAttending: this.state.event_numAttending
         }
 
-        axios.post('http://localhost:4000/events/add', newEvent)
+        axios.post('http://localhost:4000/api/events/add', newEvent)
             .then(res => console.log(res.data));
 
         this.setState({

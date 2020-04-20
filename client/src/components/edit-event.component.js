@@ -33,7 +33,7 @@ export default class EditEvent extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/events/' + this.props.match.params.id)
+        axios.get('http://localhost:4000/api/events/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     event_name: response.data.event_name,
@@ -105,7 +105,7 @@ export default class EditEvent extends Component {
     }
 
     deleteEvent() {
-        axios.post('http://localhost:4000/events/delete/' + this.props.match.params.id)
+        axios.post('http://localhost:4000/api/events/delete/' + this.props.match.params.id)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');
@@ -126,7 +126,7 @@ export default class EditEvent extends Component {
             event_numAttending: this.state.event_numAttending
         };
         console.log(obj);
-        axios.post('http://localhost:4000/events/update/' + this.props.match.params.id, obj)
+        axios.post('http://localhost:4000/api/events/update/' + this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');

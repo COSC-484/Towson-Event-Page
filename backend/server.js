@@ -23,7 +23,7 @@ mongoose
 
 // Use Routes
 app.use('/api/users', users);
-app.use('/events', events);
+app.use('/api/events', events);
 
 const port = process.env.PORT || 4000;
 

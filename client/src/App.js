@@ -36,17 +36,17 @@ class App extends Component {
                   <Link to="" className="nav-link">Login</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/viewP" className="nav-link">View Profile</Link>
+                  <Link to={"/viewProfile/5e92465cf226b308648f04a1"}  className="nav-link">View Profile</Link>
                 </li>
               </ul>
             </div>
           </nav>
           <br/>
           <Route path="/" exact component={EventsList} />
-          <Route path="/view/:id" component={ViewEvent} />
+          <Route path="/viewEvent/:id" component={ViewEvent} />
           <Route path="/edit/:id" component={EditEvent} />
           <Route path="/create" component={CreateEvent} />
-          <Route path="/viewP" component={viewProfile} />
+          <Route path="/viewProfile/:id" component={viewProfile} />
         </div>
       </Router>
     );
