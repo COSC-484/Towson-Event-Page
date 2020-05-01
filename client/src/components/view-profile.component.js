@@ -21,10 +21,20 @@ import { Container, Row, Col } from 'reactstrap';
                 bio: 'Everyone loves Joe Shmoe',
                 createdEvents: '',
                 attendEvetns: '',
-                profilPic: ''
+                profilPic: null
 
             }
+            this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
+
         }
+
+        fileSelectedHandler = event => {
+            this.setState({
+                file: URL.createObjectURL(event.target.files[0])
+              })
+        }
+
+       
 
         componentDidMount() {
             axios.get('http://localhost:4000/api/users/' + this.props.match.params.id)
@@ -87,7 +97,7 @@ import { Container, Row, Col } from 'reactstrap';
                         </div>
                          <div class = "col-6 col-md-4 border border-dark">
                             <div className = "pic" style = {{paddingTop:"10px"}}>
-                                <img src = {testImg} style = {{width:'100%'}}/>
+                                <img src = {this.state.file} style = {{width:'100%'}/>
                              </div>
                              <div className="form-group">
                                 <label class='boldLabel'>Name: </label>
@@ -104,6 +114,10 @@ import { Container, Row, Col } from 'reactstrap';
                             <div className="form-group">
                                 <label class='boldLabel'>Joined: </label>
                                 <label>{formatDateMMddYYYY(this.state.date)}</label>
+                            </div>
+                            <div className="form-group">
+                                <label>Upload Profile Picture: </label>
+                                <input type="file" onChange={this.fileSelectedHandler}/>
                             </div>
                         </div>
                     </div>

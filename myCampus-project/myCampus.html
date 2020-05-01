@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyCampus</title>
+    <link rel="stylesheet" type="text/css" href="myCampus.css" />
+    <script src="myCampus.js"></script>
+</head>
+
+<h1>My Campus</h1>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form name="signUp" class="register-form" action="myCampusResults.html" method="GET"
+                onSubmit="return checkPassword(this)">
+
+                
+                <h2>Sign Up</h2>
+
+                <div class="form-element">
+                    <label for="fname"></label>
+                    <input type="text" placeholder="First Name" required="required" name="fname" class="inputbox"
+                        id="fname" />
+                </div><br>
+
+                <div class="form-element">
+                    <label for="lname"></label>
+                    <input type="text" placeholder="Last Name" required="required" name="lname" class="inputbox"
+                        id="lname" />
+                </div><br>
+
+                <div class="form-element">
+                    <label for="email"></label>
+                    <input type="text" placeholder="Email Address" required="required" name="email" class="inputbox"
+                        id="email" />
+                </div><br>
+
+                <div class="form-element">
+                    <label for="password1"></label>
+                    <input type="password" placeholder="Password" required="required" name="password1" class="inputbox"
+                        id="password1" />
+                </div><br>
+
+                <div class="form-element">
+                    <label for="verifpass"></label>
+                    <input type="password" placeholder="Verify Password" required="required" name="password2"
+                        class="inputbox" id="password2" />
+                </div><br>
+
+                <button input type="submit" required="required" value="Submit" id="submitButton">Submit</button>
+
+                <p class="message">Already Registered? <a href="#"> Login</a>
+                </p>
+
+            </form>
+
+            <form class="login-form">
+                <input type="text" required="required" placeholder="Username" />
+                <input type="password" required="required" placeholder="Password" />
+                <button>Login</button>
+                <p class="message">Not Registered? <a href="#">Register</a></p>
+            </form>
+
+        </div>
+    </div>
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+
+    <script>
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        })
+
+    </script>
+
+
+</body>
+
+<br><br>
+
+<footer>
+    MyCampus, Baltimore, MD
+</footer>
+
+</html>

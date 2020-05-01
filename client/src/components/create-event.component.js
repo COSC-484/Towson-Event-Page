@@ -178,7 +178,7 @@ export default class CreateEvent extends Component {
                     </div>
                     <div className="form-group">
                         <label>Description: </label>
-                        <input  type="text"
+                        <textarea  type="text"
                                 className="form-control"
                                 value={this.state.event_description}
                                 onChange={this.onChangeEventDescription}
