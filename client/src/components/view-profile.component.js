@@ -97,7 +97,7 @@ import { Container, Row, Col } from 'reactstrap';
                         </div>
                          <div class = "col-6 col-md-4 border border-dark">
                             <div className = "pic" style = {{paddingTop:"10px"}}>
-                                <img src = {this.state.file} style = {{width:'100%'}/>
+                                <img src = {this.state.file} style = {{width:'100%'}}/>
                              </div>
                              <div className="form-group">
                                 <label class='boldLabel'>Name: </label>
