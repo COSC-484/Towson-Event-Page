@@ -6,10 +6,10 @@
 
 # after downloading the necessary files perform the following commands to get the server to run.
 
-# To run the server cd into the backend folder then run npm run dev
+# To run the server cd into the root then run npm run dev
 
 ## If you receive an error stating permission denied... 
-    - cd [into backend folder]
+    - cd [into root of project]
     - npm cache clean --force
     - rm -rf node_modules package-lock.json
     - npm install
