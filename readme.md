@@ -1,4 +1,4 @@
-# Download all files in the folder called Master Branch 
+# Download all files in the folder called Master 
 
 # To Properly download the project download the "backend" and "client" folders.
 
