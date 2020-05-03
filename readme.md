@@ -1,3 +1,5 @@
+# Download all files in the folder called Master Branch 
+
 # To Properly download the project download the "backend" and "client" folders.
 
 # Make sure these folders are downloaded into an empty/parent folder.

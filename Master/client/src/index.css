@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "verdana", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.registerLoginBackground {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("./images/school2.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#searchButton {
+  margin-left: 15px;
+}
+
+#sortLabel {
+  font-weight: bold;
+  margin-left: 500px;
+  margin-right: 10px;
+}
+
+.boldLabel {
+  font-weight: bold;
+  font-size: 130%;
+  margin-right: 10px;
+}
+
+#moveDown {
+  margin-top: 50px;
+}
+
+.titleLabel {
+  font-weight: bold;
+  font-size: 110%;
+  margin-left: 300px;
+}
+
+.darkLine {
+  border-color: black;
+  background-color: black;
+  color: black;
+}
+
+/* bootstrap CSS */
+.redErrorText {
+  color: red;
+  margin-left: 10px;
+  font-size: 100%;
+}
