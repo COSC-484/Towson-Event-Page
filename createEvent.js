@@ -8,7 +8,7 @@ class CreateEvent extends React.Component {
           EventName: '',
           EventDescription:'',
           EventLocation:'',
-          EventDataAndTime:'',
+          EventTime:'',
           Hosts:'',
           EventTags:''
         };
@@ -16,7 +16,6 @@ class CreateEvent extends React.Component {
         this.onChangeEventName = this.onChangeEventName.bind(this);
         this.onChangeEventDate = this.onChangeEventDate.bind(this);
         this.onChangeEventTimeStart = this.onChangeEventTimeStart.bind(this);
-        this.onChangeEventTimeEnd = this.onChangeEventTimeEnd.bind(this);
         this.onChangeEventLocation = this.onChangeEventLocation.bind(this);
         this.onChangeEventDescription = this.onChangeEventDescription.bind(this);
         this.onChangeEventHosts = this.onChangeEventHosts.bind(this);
@@ -26,48 +25,49 @@ class CreateEvent extends React.Component {
 
     onChangeEventName(e) {
         this.setState({
-            event_name: e.target.value
+            EventName: e.target.value
         });
+    }
+    onChangeTags(e){
+        this.setState({
+            EventTags: e.target.value
+        })
     }
 
     onChangeEventDate(e) {
-        var eventDate = formatDateYYYYmmDD(adjustTimeZone(e.target.value));
+        var EventDate = formatDateYYYYmmDD(adjustTimeZone(e.target.value));
         console.log(eventDate);
         
         this.setState({
-            event_date: eventDate
+            EventDate: eventDate
         });
     }
 
     onChangeEventTimeStart(e) {
         this.setState({
-            event_timeStart: e.target.value,
+            EventTime: e.target.value,
         });
 
         console.log(e.target.value);
     }
 
-    onChangeEventTimeEnd(e) {
-        this.setState({
-            event_timeEnd: e.target.value
-        });
-    }
+
 
     onChangeEventLocation(e) {
         this.setState({
-            event_location: e.target.value
+            EventLocation: e.target.value
         });
     }
 
     onChangeEventDescription(e) {
         this.setState({
-            event_description: e.target.value
+            EventDescription: e.target.value
         });
     }
 
     onChangeEventHosts(e) {
         this.setState({
-            event_hosts: e.target.value
+            EventHosts: e.target.value
         });
     }
 
@@ -75,16 +75,12 @@ class CreateEvent extends React.Component {
         e.preventDefault();
 
         const newEvent = {
-            event_userId: this.state.event_userId, 
-            event_name: this.state.event_name,
-            event_date: this.state.event_date,
-            event_timeStart: this.state.event_timeStart,
-            event_timeEnd: this.state.event_timeEnd,
-            event_location: this.state.event_location,
-            event_description: this.state.event_description,
-            event_hosts: this.state.event_hosts,
-            event_attending: [ this.state.event_userId ],
-            event_numAttending: 1,
+            EventName: this.state.event_name,
+            EventDate: this.state.event_date,
+            EvenTimeStart: this.state.event_timeStart,
+            EventLocation: this.state.event_location,
+            EventDescription: this.state.event_description,
+            EventHosts: this.state.event_hosts,
         }
   
     render() {
@@ -93,39 +89,39 @@ class CreateEvent extends React.Component {
          
           <label>
             Event Name:
-            <input name="name" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="name" type="text" value={this.state.value} onChange={this.onChangeEventName} />
           </label>
 
           <label>
             Event Description:
-            <textarea name="description" type="text" value={this.state.value} onChange={this.handleChange} />
+            <textarea name="description" type="text" value={this.state.value} onChange={this.onChangeEventLocation} />
           </label>
 
           <label>
             Event Location:
-            <input name="location" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="location" type="text" value={this.state.value} onChange={this.onChangeEventLocation} />
           </label>
 
           <label>
             Event Date:
-            <input name="date" type="date" value={this.state.value} onChange={this.handleChange} />
+            <input name="date" type="date" value={this.state.value} onChange={this.onChangeEventDate} />
           </label>
 
           <label>
             Event Time:
-            <input name="time" type="time" value={this.state.value} onChange={this.handleChange} />
+            <input name="time" type="time" value={this.state.value} onChange={this.onChangeEventTimeStart} />
           </label>
 
           <label>
             Event Host:
-            <input name="hosts" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="hosts" type="text" value={this.state.value} onChange={this.onChangeEventHosts} />
           </label>
 
           <label>
             Event Tags:
             <input name="tags" type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.onSubmit} />
         </form>
       );
     }
